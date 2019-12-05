@@ -61,6 +61,10 @@ build: fmt
 	@cp -ru $(CURPATH)/vendor/* $(TARGET_DIR)/src
 	@GOPATH=$(BUILD_GOPATH) $(GOBUILD) $(LDFLAGS) -o $(TARGET) $(MAIN_PKG)
 
+# Fast build, avoids copy operation
+build-dev:
+	go build -o elastic-search-operator-dev $(MAIN_PKG)
+
 clean:
 	@rm -rf $(TARGET_DIR)
 

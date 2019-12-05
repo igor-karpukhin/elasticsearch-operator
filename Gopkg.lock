@@ -57,14 +57,6 @@
   revision = "de5bf2ad457846296e2031421a34e2568e304e35"
 
 [[projects]]
-  digest = "1:680b63a131506e668818d630d3ca36123ff290afa0afc9f4be21940adca3f27d"
-  name = "github.com/appscode/jsonpatch"
-  packages = ["."]
-  pruneopts = "NT"
-  revision = "7c0e3b262f30165a8ec3d0b4c6059fd92703bfb2"
-  version = "1.0.0"
-
-[[projects]]
   branch = "master"
   digest = "1:c819830f4f5ef85874a90ac3cbcc96cd322c715f5c96fbe4722eacd3dafbaa07"
   name = "github.com/beorn7/perks"
@@ -744,6 +736,25 @@
   revision = "052fc3cfdbc2c9e9082b1d51f850b7974b5efb2a"
 
 [[projects]]
+  branch = "master"
+  digest = "1:c0619d0c0c2f585812ce9f844eafb9c5660f5bd723c9ac0cd60b7fac665d2ac6"
+  name = "golang.org/x/xerrors"
+  packages = [
+    ".",
+    "internal",
+  ]
+  pruneopts = "NT"
+  revision = "1b5146add8981d58be77b16229c0ff0f8bebd8c1"
+
+[[projects]]
+  digest = "1:8392b5c29adedc5f85c66b48bb53b6c49dd91d8540f3cad5d43ef7277946718f"
+  name = "gomodules.xyz/jsonpatch"
+  packages = ["v2"]
+  pruneopts = "NT"
+  revision = "e8422f09d27ee2c8cfb2c7f8089eb9eeb0764849"
+  version = "v2.0.1"
+
+[[projects]]
   digest = "1:7f41328f018b3c6cc4952cb0acc044984b290c8bada1f6644340835132bfad1e"
   name = "google.golang.org/api"
   packages = ["support/bundler"]
@@ -823,6 +834,15 @@
   version = "v1.19.1"
 
 [[projects]]
+  digest = "1:1b91ae0dc69a41d4c2ed23ea5cffb721ea63f5037ca4b81e6d6771fbb8f45129"
+  name = "gopkg.in/fsnotify.v1"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
+  source = "https://github.com/fsnotify/fsnotify.git"
+  version = "v1.4.7"
+
+[[projects]]
   digest = "1:2d1fbdc6777e5408cabeb02bf336305e724b925ff4546ded0fa8715a7267922a"
   name = "gopkg.in/inf.v0"
   packages = ["."]
@@ -877,7 +897,8 @@
     "storage/v1beta1",
   ]
   pruneopts = "NT"
-  revision = "05914d821849570fba9eacfb29466f2d8d3cd229"
+  revision = "74b699b93c15473932b89e3d1818ba8282f3b5ab"
+  version = "kubernetes-1.13.3"
 
 [[projects]]
   digest = "1:c6f23048e162e65d586c809fd02e263e180ad157f110df17437c22517bb59a4b"
@@ -888,10 +909,11 @@
     "pkg/client/clientset/clientset/scheme",
   ]
   pruneopts = "NT"
-  revision = "0fe22c71c47604641d9aa352c785b7912c200562"
+  revision = "d4288ab6494571219e781fa423db363247635942"
+  version = "kubernetes-1.13.3"
 
 [[projects]]
-  digest = "1:15b5c41ff6faa4d0400557d4112d6337e1abc961c65513d44fce7922e32c9ca7"
+  digest = "1:344360823b1ea10db8cdd35fb5b7bf4a61bd9123c950d28596ead2621d703c17"
   name = "k8s.io/apimachinery"
   packages = [
     "pkg/api/errors",
@@ -939,10 +961,11 @@
     "third_party/forked/golang/reflect",
   ]
   pruneopts = "NT"
-  revision = "2b1284ed4c93a43499e781493253e2ac5959c4fd"
+  revision = "572dfc7bdfcb4531361a17d27b92851f59acf0dc"
+  version = "kubernetes-1.13.3"
 
 [[projects]]
-  digest = "1:c904a3d70131b33df36e4e51b574226b82308fc1ea66964aa21095a95d453fc9"
+  digest = "1:7f28bbfb5889618ab038d4d250d7adb6762aa43b2fc120a95a1cd47c68af6dd4"
   name = "k8s.io/client-go"
   packages = [
     "discovery",
@@ -1021,7 +1044,8 @@
     "util/workqueue",
   ]
   pruneopts = "NT"
-  revision = "8d9ed539ba3134352c586810e749e58df4e94e4f"
+  revision = "6e4752048fde21176ab35eb54ec1117359830d8a"
+  version = "kubernetes-1.13.3"
 
 [[projects]]
   digest = "1:dc1ae99dcab96913d81ae970b1f7a7411a54199b14bfb17a7e86f9a56979c720"
@@ -1094,7 +1118,7 @@
   revision = "0cf8f7e6ed1d2e3d47d02e3b6e559369af24d803"
 
 [[projects]]
-  digest = "1:06035489efbd51ccface65fc878ceeb849aba05b2f9443c8993f363fc96e80ac"
+  digest = "1:fdf6c6bbb39a27ec36f40aefa6dd3be37475210bbac2a808ddd7cc84715664f8"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
     "pkg/cache",
@@ -1104,15 +1128,21 @@
     "pkg/client/config",
     "pkg/client/fake",
     "pkg/controller",
+    "pkg/controller/controllerutil",
     "pkg/event",
     "pkg/handler",
+    "pkg/healthz",
     "pkg/internal/controller",
     "pkg/internal/controller/metrics",
+    "pkg/internal/log",
+    "pkg/internal/objectutil",
     "pkg/internal/recorder",
     "pkg/leaderelection",
+    "pkg/log",
+    "pkg/log/zap",
     "pkg/manager",
+    "pkg/manager/signals",
     "pkg/metrics",
-    "pkg/patch",
     "pkg/predicate",
     "pkg/reconcile",
     "pkg/recorder",
@@ -1120,16 +1150,17 @@
     "pkg/runtime/log",
     "pkg/runtime/scheme",
     "pkg/runtime/signals",
+    "pkg/scheme",
     "pkg/source",
     "pkg/source/internal",
+    "pkg/webhook",
     "pkg/webhook/admission",
-    "pkg/webhook/admission/types",
+    "pkg/webhook/internal/certwatcher",
     "pkg/webhook/internal/metrics",
-    "pkg/webhook/types",
   ]
   pruneopts = "NT"
-  revision = "12d98582e72927b6cd0123e2b4e819f9341ce62c"
-  version = "v0.1.10"
+  revision = "198197fe0fd7553cadd8afcd3338f8ee4b8a7e3f"
+  version = "v0.4.0"
 
 [[projects]]
   digest = "1:00eecd8f1e0541da85a37549f6514c4b3517e2e000b74a0dc9f47cee07d7e1b5"
@@ -1199,12 +1230,15 @@
     "sigs.k8s.io/controller-runtime/pkg/client/config",
     "sigs.k8s.io/controller-runtime/pkg/client/fake",
     "sigs.k8s.io/controller-runtime/pkg/controller",
+    "sigs.k8s.io/controller-runtime/pkg/controller/controllerutil",
     "sigs.k8s.io/controller-runtime/pkg/handler",
+    "sigs.k8s.io/controller-runtime/pkg/log",
     "sigs.k8s.io/controller-runtime/pkg/manager",
     "sigs.k8s.io/controller-runtime/pkg/reconcile",
     "sigs.k8s.io/controller-runtime/pkg/runtime/log",
     "sigs.k8s.io/controller-runtime/pkg/runtime/scheme",
     "sigs.k8s.io/controller-runtime/pkg/runtime/signals",
+    "sigs.k8s.io/controller-runtime/pkg/scheme",
     "sigs.k8s.io/controller-runtime/pkg/source",
     "sigs.k8s.io/controller-tools/pkg/crd/generator",
   ]
