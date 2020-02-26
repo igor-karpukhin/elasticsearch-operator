@@ -77,6 +77,22 @@ spec:
                       size:
                         description: The max storage capacity for the node
                         type: string
+                  bootstrap:
+                    type: object
+                    description: Actions to be run before the EO cluster starts
+                    properties:
+                      image:
+                        type: string
+                        description: The image to use for the bootstrap process
+                      actions:
+                        type: object
+                        description: Execute action for a specific event
+                          onFullRestart:
+                            type: string
+                            description: Execute script/program when full restart of the EO cluster is performed
+                          onRollingRestart:
+                            type: string
+                            description: Execute script/program when rolling restart of the EO cluster is performed
             indexManagement:
               description: Management spec for indicies
               properties:

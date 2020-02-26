@@ -59,11 +59,18 @@ type ElasticsearchSpec struct {
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 	// Add custom validation using kubebuilder tags: https://book.kubebuilder.io/beyond_basics/generating_crd.html
 
-	ManagementState  ManagementState       `json:"managementState"`
-	RedundancyPolicy RedundancyPolicyType  `json:"redundancyPolicy"`
-	Nodes            []ElasticsearchNode   `json:"nodes"`
-	Spec             ElasticsearchNodeSpec `json:"nodeSpec"`
-	IndexManagement  *IndexManagementSpec  `json:"indexManagement"`
+	ManagementState  ManagementState         `json:"managementState"`
+	RedundancyPolicy RedundancyPolicyType    `json:"redundancyPolicy"`
+	Nodes            []ElasticsearchNode     `json:"nodes"`
+	Spec             ElasticsearchNodeSpec   `json:"nodeSpec"`
+	IndexManagement  *IndexManagementSpec    `json:"indexManagement"`
+	Bootstrap        *ElasticsearchBootstrap `json:"bootstrap"`
+}
+
+type ElasticsearchBootstrap struct {
+	Image            string `json:"image"`
+	OnFullRestart    string `json:"onFullRestart"`
+	OnRollingRestart string `json:"onRollingRestart"`
 }
 
 // ElasticsearchStatus defines the observed state of Elasticsearch
