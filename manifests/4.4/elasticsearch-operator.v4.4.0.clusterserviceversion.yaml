@@ -46,11 +46,11 @@ metadata:
                       }
                     }
                   },
-                  "bootstrap": {
-                      "image": "quay.io/openshift/origin-logging-elasticsearch-bootstrap6:latest",
-                      "actions: {
-                          "onFullRestart": "init.sh"
-                          "onRollingRestart": "init_rolling.sh"
+                  "actions": {
+                      "image": "quay.io/openshift/origin-logging-elasticsearch6:latest",
+                      "when": {
+                          "postNew": "init.sh"
+                          "postUpgrade": "init_upgrade.sh"
                       }
                   },
                   "redundancyPolicy": "SingleRedundancy",
